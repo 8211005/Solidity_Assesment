@@ -4,7 +4,7 @@ This Solidity program is a simple program that illustrates the basics of the Sol
 
 ## Description
 
-This program is a simple contract written in Solidity. Solidity is a programming language that is utilitized for developing smart contracts on the Ethereum blockchain. The contract contains three public variables that store details about my coin: tokenName, tokenAbbrv, and totalSupply. The contract also contains a mapping of balances. The program also contains a mint and a burn function. Both functions take in two parameters: address and value. The mint function then increases the total supply by that number and increases the balance of the address by that amount. The burn function does the opposite and instead decreases the balance of the address while taking into account the value of the balance of the address and the value to be deducted. If the balance of the account is greater than the value to be deducted, the function will deduct the value form the balance. Otherwise, it will skip the code in the function and do nothing.
+Simple contract developed in Solidity makes up this software. On the Ethereum blockchain, smart contracts are created using the programming language Solidity. The contract contains three public variables that store details about my coin: tokenName, tokenAbbrv, and totalSupply. The contract also contains a mapping of balances. The program also contains a mint and a burn function. Both functions take in two parameters: address and value. The mint function then increases the balance of the address by that amount and increases the total supply by that sum. In contrast, the burn function reduces the address's balance while taking both the value of the address's balance and the value to be subtracted into account. The function will subtract the value from the balance if the account balance is more than the amount to be subtracted. If not, it will ignore the function's code and do nothing.
 
 ## Getting Started
 
@@ -12,7 +12,7 @@ This program is a simple contract written in Solidity. Solidity is a programming
 
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the code from the SolidityProject.sol file from the repository or the following code into the file:
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the code from the mtToken.sol file from the repository or the following code into the file:
 
 ```javascript
 // SPDX-License-Identifier: MIT
@@ -35,27 +35,27 @@ pragma solidity 0.8.18;
 contract MyToken {
 
     // public variables here
-    string public tokenName = "LEAGUE";
-    string public tokenAbbrv = "LGE";
+    string public tokenName = "TURTLE";
+    string public tokenAbbrv = "TRTL";
     uint public totalSupply = 0;
 
     // mapping variable here
     mapping(address => uint) public balances;
 
     // mint function
-    function mint(address _address, uint _val) public {
-        totalSupply += _val;
-        balances[_address] += _val;
-    }
+   function mint (address _address, uint _value) public {
+      totalSupply += _value;
+      balances[_address] += _value;
+   } 
 
     // burn function
-    function burn(address _address, uint _val) public {
-        if(balances[_address] > _val){
-            totalSupply -= _val;
-            balances[_address] -= _val;
-        }
-        
-    }
+   function burn (address _address, uint _value) public {
+      if (balances[_address ] >= _value) {
+      totalSupply -= _value;
+      balances[_address]-= _value;
+      }
+   } 
+
 }
 
 ```
@@ -68,4 +68,8 @@ Once the contract is deployed, you can interact with it by calling the all the f
 
 # Authors
 
-Allan C. Magtibay Jr.
+Rodelit Bernil
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
